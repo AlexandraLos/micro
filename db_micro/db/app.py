@@ -1,7 +1,8 @@
 from flask import Flask
 from db import Database
-app = Flask(__name__)
 
+
+app = Flask(__name__)
 db = Database()
 db.create_table()
 
