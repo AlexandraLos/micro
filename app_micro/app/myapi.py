@@ -1,5 +1,5 @@
-from flask import Flask
 import requests
+from flask import Flask
 
 PORT = "8080"
 app = Flask(__name__)
