@@ -1,0 +1,38 @@
+version: "3"
+
+services:
+
+  reaper:
+
+    build: reaper/
+
+    command: python ./api.py
+
+    ports:
+      - 8000:8000
+
+
+  keeper:
+
+    build: keeper/
+ 
+    command: python ./app.py
+
+    network_mode: host
+ 
+    depends_on:
+      - reaper
+
+  master:
+
+    build: master/
+ 
+    command: python ./myapi.py
+
+    ports:
+      - 8080:8080
+ 
+    depends_on:
+      - reaper
+      - keeper
+
