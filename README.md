@@ -1,8 +1,8 @@
 # Micro
-Microservices application for receiving real-time cryptocurrency rates from www.coingecko.com
+Microservices application for receiving cryptocurrency courses from www.coingecko.com
 # How it works?
 Precondition: Docker is installed.
-1. Download this repository by clicking "Code" -> "Download ZIP" or clone the repository with the command:
+1. Clone the repository with the command:
    `https://github.com/AlexandraLos/micro.git`
 2. Open the project folder and run the build:
    `docker-compose build`

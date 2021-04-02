@@ -34,3 +34,7 @@ class Database:
         cursor = self.conn.cursor()
         info = cursor.execute("SELECT * FROM prices WHERE name=?", [name,]).fetchall()[0]
         return info
+    
+
+
+

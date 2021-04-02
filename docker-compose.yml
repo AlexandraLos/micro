@@ -1,4 +1,4 @@
-version: "3"
+version: "3.1"
 
 services:
 
@@ -6,19 +6,24 @@ services:
 
     build: reaper/
 
-    command: python ./api.py
+    network_mode: host
 
     ports:
       - 8000:8000
+
+    command: ./scraper.py
 
 
   keeper:
 
     build: keeper/
- 
-    command: python ./app.py
 
     network_mode: host
+
+    ports:
+      - 5000:5000
+ 
+    command: ./database_api.py
  
     depends_on:
       - reaper
@@ -27,10 +32,12 @@ services:
 
     build: master/
  
-    command: python ./myapi.py
-
     ports:
       - 8080:8080
+
+    network_mode: host
+
+    command: ./master.py
  
     depends_on:
       - reaper
