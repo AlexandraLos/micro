@@ -1,44 +1,25 @@
 version: "3.1"
 
 services:
-
   reaper:
-
     build: reaper/
-
-    network_mode: host
-
     ports:
       - 8000:8000
-
     command: ./scraper.py
 
-
   keeper:
-
     build: keeper/
-
-    network_mode: host
-
     ports:
       - 5000:5000
- 
     command: ./database_api.py
- 
     depends_on:
       - reaper
 
   master:
-
     build: master/
- 
     ports:
       - 8080:8080
-
-    network_mode: host
-
     command: ./master.py
- 
     depends_on:
       - reaper
       - keeper

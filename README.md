@@ -9,6 +9,6 @@ Precondition: Docker is installed.
 3. Start containers with the command:
    `docker-compose up`
 4. Make a request in the search bar of your browser by substituting the value of the desired currency instead of "tiker", for example "bitcoin":
-   `http://127.0.0.1:8080/myapi/{tiker}`
+   `http://0.0.0.0:8080/master_api/{tiker}`
 # How do I choose the cryptocurrency I need?
 To change cryptocurrency, go to www.coingecko.com, find the required cryptocurrency and follow the instructions from point 4.

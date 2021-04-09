@@ -6,10 +6,10 @@ PORT = "8080"
 app = Flask(__name__)
 
 
-@app.route('/myapi/<name>')
+@app.route('/master_api/<name>')
 def get_data(name):
-    requests.get(f'http://127.0.0.1:8000/api/{name}')
-    return f"{requests.get(f'http://127.0.0.1:5000/api/info/{name}').text}"
+    requests.get(f'http://reaper:8000/api/{name}')
+    return f"{requests.get(f'http://keeper:5000/api/info/{name}').text}"
 
 
-app.run(port=PORT)
+app.run(host='0.0.0.0', port=PORT)

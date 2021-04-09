@@ -3,6 +3,7 @@ from db import Database
 
 
 app = Flask(__name__)
+PORT = "5000"
 db = Database()
 db.create_table()
 
@@ -23,4 +24,4 @@ def get_info(name):
     return f"{info[0]}: {info[1]}"
 
 
-app.run()
+app.run(host='0.0.0.0', port=PORT)
